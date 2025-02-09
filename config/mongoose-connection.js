@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-
-const uri = 'mongodb+srv://chirag233:lShiTsfhR2eSR5D9@newtodo.at5aviu.mongodb.net/?retryWrites=true&w=majority&appName=NewTodo';
+const config = require('config');
 
 mongoose
-.connect(uri)
+.connect(config.get("MONGODB_URI"))
 .then(function(){
     console.log("connected");
 })
